@@ -53,7 +53,7 @@ class Transaction:
         Returns a human-readable string representation of the transaction.
         """
         sign = "+" if self.type == "income" else "-"
-        return f"ID: {self.id:<4} | Date: {self.date} | {self.description:<30} | Category: {self.category:<15} | {sign}${self.amount:,.2f}"
+        return f"ID: {self.id:<4} | Date: {self.date} | {self.description:<30} | Category: {self.category:<15} | {sign}PHP{self.amount:,.2f}"
 
     def to_dict(self):
         """
@@ -61,7 +61,7 @@ class Transaction:
         """
         return {
             "id": self.id,
-            "date": self.date.isoformat(),  # Convert date to string for saving
+            "date": self.date.isoformat(),  
             "description": self.description,
             "amount": self.amount,
             "type": self.type,
@@ -79,7 +79,7 @@ class Transaction:
             cls.next_id = data["id"] + 1
 
         return cls(
-            date=datetime.date.fromisoformat(data["date"]), # Convert string back to date object
+            date=datetime.date.fromisoformat(data["date"]), 
             description=data["description"],
             amount=data["amount"],
             type=data["type"],
@@ -87,7 +87,7 @@ class Transaction:
             id=data["id"]
         )
 
-# Example Usage (for testing the class independently)
+
 if __name__ == "__main__":
     try:
         t1 = Transaction(datetime.date(2026, 4, 27), "Groceries", 50.00, "expense", "Food")
@@ -98,13 +98,13 @@ if __name__ == "__main__":
         print(t3)
         print(f"Next ID to be assigned: {Transaction.next_id}")
 
-        # Test dictionary conversion
+        
         t1_dict = t1.to_dict()
         print(f"\nTransaction 1 as dict: {t1_dict}")
         t1_from_dict = Transaction.from_dict(t1_dict)
         print(f"Transaction 1 from dict: {t1_from_dict}")
 
-        # Test ID handling after loading
+        
         t_loaded_high_id = Transaction.from_dict({"id": 100, "date": "2026-01-01", "description": "Old Bill", "amount": 20, "type": "expense", "category": "Utilities"})
         print(f"Loaded high ID transaction: {t_loaded_high_id}")
         print(f"Next ID after loading high ID: {Transaction.next_id}")
