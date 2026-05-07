@@ -1,6 +1,6 @@
 import os
 import sys
-from src.finance_manager import FinanceManager
+from finance_manager import FinanceManager
 
 def display_menu():
     """Displays the main menu options to the user."""
