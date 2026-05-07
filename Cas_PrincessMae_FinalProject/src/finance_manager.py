@@ -1,6 +1,6 @@
 import json
 import datetime
-from src.transaction import Transaction # Import the Transaction class
+from transaction import Transaction # Import the Transaction class
 
 class FinanceManager:
     """
