@@ -1,33 +1,98 @@
-FinTrack CLI - Personal Finance Tracker
  
-System Overview
+Project Description
  
-FinTrack CLI is a robust Command-Line Interface (CLI) application designed for personal finance tracking. It provides users with an intuitive and efficient platform to manage and analyze their income and expenses directly from the terminal. The system aims to offer a clear and accessible way to monitor financial habits, enabling better insight and control over personal economic activities.
+This is a Command Line Interface (CLI) application developed in Python to help users track and manage personal finances. It records all income and expense transactions, ensures data integrity with validation, supports JSON storage, and automatically manages unique IDs for every record.
  
-Core Features
  
-The FinTrack CLI system incorporates the following functionalities:
  
-- Transaction Management:- Add New Transactions: Facilitates the entry of income and expense records, including details such as date, textual description, monetary amount, transaction type (income/expense), and category.
-- Edit Existing Transactions: Allows modification of details for any recorded transaction.
-- Delete Transactions: Supports the removal of specific transactions from the record.
-- Transaction Viewing & Filtering:- View All Transactions: Displays a comprehensive list of all recorded financial activities, typically sorted chronologically.
-- View Income-Specific Transactions: Filters and presents only income entries.
-- View Expense-Specific Transactions: Filters and presents only expense entries.
-- Financial Reporting:- Current Balance Calculation: Computes and displays the net financial position (total income minus total expenses).
-- Category-Based Summary: Generates a detailed breakdown of income, expenses, and net amounts aggregated by user-defined categories, aiding in financial analysis and budgeting.
-- Data Persistence: All transaction data is automatically saved to and loaded from a structured JSON file, ensuring that financial records are preserved across application sessions.
+Features
  
-Technical Architecture
+- Object-Oriented Design: Built with a  Transaction  class to encapsulate all transaction logic, attributes, and behaviors for clean and maintainable code.
+- Unique ID System: Automatically assigns unique IDs to every new transaction; properly updates sequencing even when loading existing records from storage.
+- Strict Input Validation: Prevents invalid entries — checks date format, numeric amount, correct transaction type ( income  /  expense ), non-empty fields, and positive values.
+- Data Serialization: Convert transaction objects to dictionary format for easy JSON saving, and reconstruct them back into objects when loading data.
+- Human-Readable Formatting: Displays transactions in a clear, aligned format with proper sign ( +  for income,  -  for expense) and currency formatting.
+- Data Persistence Ready: Built with methods  to_dict()  and  from_dict()  so you can easily save/load records to a JSON file.
  
-The FinTrack CLI is engineered using Python, adhering to Object-Oriented Programming (OOP) paradigms for a structured and maintainable codebase. Key architectural components include:
  
--  Transaction  Class:- Serves as the data model for individual financial records, encapsulating attributes such as a unique identifier ( id ),  date ,  description ,  amount ,  type , and  category .
-- Includes built-in data validation mechanisms for attributes like  date ,  amount , and  type  to ensure data integrity.
-- Manages automatic assignment of unique transaction identifiers.
-- Provides serialization ( to_dict ) and deserialization ( from_dict ) methods for seamless conversion between object instances and dictionary representations suitable for JSON storage.
--  FinanceManager  Class:- Acts as the central business logic controller, managing a collection of  Transaction  objects.
-- Implements all core operations: adding, viewing, editing, deleting, and summarizing transactions.
-- Manages data loading from ( _load_data ) and saving to ( _save_data ) the persistent  transactions.json  file.
-- Data Processing & Validation:- Utilizes efficient Python constructs such as list comprehensions for filtering,  sorted()  with  lambda  for ordering, and dictionary aggregations for generating summary reports.
-- Incorporates robust input validation and error handling routines to prevent invalid data entries and ensure a stable user experience.
+ 
+Class Structure Overview
+ 
+ Transaction  Class
+ 
+Represents a single financial transaction.
+ 
+Attributes:
+ 
+-  id  (int): Unique identifier
+-  date  (datetime.date): Date of transaction
+-  description  (str): Short note about the transaction
+-  amount  (float): Monetary value
+-  type  (str): Either  income  or  expense 
+-  category  (str): Classification (e.g., Food, Salary, Transport, Utilities)
+ 
+Main Methods:
+ 
+-  __init__()  → Initialize and validate transaction data
+-  __str__()  → Return formatted readable string
+-  to_dict()  → Convert object to dictionary (for saving)
+-  from_dict()  → Class method to create object from dictionary (for loading)
+ 
+ 
+ 
+ Installation & Usage
+ 
+1. Clone the Repository
+ 
+bash
+  
+git clone https://github.com/[your-username]/[your-repo-name].git
+ 
+ 
+2. Navigate to Project Folder
+ 
+bash
+  
+cd [your-repo-name]/src
+ 
+ 
+3. Run the Program
+ 
+bash
+  
+python main.py
+ 
+ 
+ Sample Output
+ 
+plaintext
+  
+ID: 1    | Date: 2026-04-27 | Groceries                     | Category: Food           | -$50.00
+ID: 2    | Date: 2026-04-25 | Salary                        | Category: Work           | +$1,500.00
+ID: 3    | Date: 2026-04-26 | Bus Fare                      | Category: Transport      | -$3.50
+Next ID to be assigned: 4
+
+Transaction 1 as dict: {'id': 1, 'date': '2026-04-27', 'description': 'Groceries', 'amount': 50.0, 'type': 'expense', 'category': 'Food'}
+Transaction 1 from dict: ID: 1    | Date: 2026-04-27 | Groceries                     | Category: Food           | -$50.00
+
+Loaded high ID transaction: ID: 100  | Date: 2026-01-01 | Old Bill                      | Category: Utilities      | -$20.00
+Next ID after loading high ID: 101
+ID: 101  | Date: 2026-04-28 | Dinner                        | Category: Food           | -$25.00
+Next ID after new transaction: 102
+ 
+ 
+ 
+ 
+ Video Demonstration
+ 
+👉 https://youtu.be/5fscHLPZV78
+ 
+ 
+ 
+📌 Project Details
+ 
+- Developer: Cas, Princess Mae
+- Language: Python 3
+- Core Concept: OOP, Data Validation, Serialization, File Handling
+- Project Type: Final Project — CLI Finance Manager
+ 
