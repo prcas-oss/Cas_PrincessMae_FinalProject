@@ -51,12 +51,11 @@ https://github.com/prcas-oss/Cas_PrincessMae_FinalProject.git
  
 2. Navigate to Project Folder
  
-https://github.com/prcas-oss/Cas_PrincessMae_FinalProject.git
+Cas_PrincessMae_FinalProject/src
  
  
 3. Run the Program
- 
-bash
+
   
 python main.py
  
