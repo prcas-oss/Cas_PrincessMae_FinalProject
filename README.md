@@ -46,7 +46,7 @@ Main Methods:
  
 bash
   
-git clone https://github.com/[your-username]/[your-repo-name].git
+https://github.com/prcas-oss/Cas_PrincessMae_FinalProject.git
  
  
 2. Navigate to Project Folder
