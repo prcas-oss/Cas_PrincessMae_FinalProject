@@ -51,9 +51,7 @@ git clone https://github.com/[your-username]/[your-repo-name].git
  
 2. Navigate to Project Folder
  
-bash
-  
-cd [your-repo-name]/src
+https://github.com/prcas-oss/Cas_PrincessMae_FinalProject.git
  
  
 3. Run the Program
