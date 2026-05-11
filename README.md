@@ -61,22 +61,10 @@ python main.py
  
  
  Sample Output
- 
-plaintext
+ <img width="1032" height="265" alt="Screenshot 2026-05-11 133907" src="https://github.com/user-attachments/assets/1eca27b2-af5b-447d-9061-417b523c3306" />
+
   
-ID: 1    | Date: 2026-04-27 | Groceries                     | Category: Food           | -$50.00
-ID: 2    | Date: 2026-04-25 | Salary                        | Category: Work           | +$1,500.00
-ID: 3    | Date: 2026-04-26 | Bus Fare                      | Category: Transport      | -$3.50
-Next ID to be assigned: 4
 
-Transaction 1 as dict: {'id': 1, 'date': '2026-04-27', 'description': 'Groceries', 'amount': 50.0, 'type': 'expense', 'category': 'Food'}
-Transaction 1 from dict: ID: 1    | Date: 2026-04-27 | Groceries                     | Category: Food           | -$50.00
-
-Loaded high ID transaction: ID: 100  | Date: 2026-01-01 | Old Bill                      | Category: Utilities      | -$20.00
-Next ID after loading high ID: 101
-ID: 101  | Date: 2026-04-28 | Dinner                        | Category: Food           | -$25.00
-Next ID after new transaction: 102
- 
  
  
  
