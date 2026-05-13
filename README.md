@@ -43,11 +43,8 @@ Main Methods:
  Installation & Usage
  
 1. Clone the Repository
- 
-bash
+ gh repo clone prcas-oss/Cas_PrincessMae_FinalProject
   
-https://github.com/prcas-oss/Cas_PrincessMae_FinalProject.git
- 
  
 2. Navigate to Project Folder
  
