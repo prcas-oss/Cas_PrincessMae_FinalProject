@@ -43,6 +43,7 @@ Main Methods:
  Installation & Usage
  
 1. Clone the Repository
+
  gh repo clone prcas-oss/Cas_PrincessMae_FinalProject
   
  
@@ -53,6 +54,7 @@ Cas_PrincessMae_FinalProject/src
  
 3. Run the Program
 
+https://github.com/prcas-oss/Cas_PrincessMae_FinalProject.git
   
 python main.py
  
